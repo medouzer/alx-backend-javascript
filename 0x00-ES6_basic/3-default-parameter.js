@@ -1,1 +1,2 @@
-export default function getSumOfHoods(_ber, _89 = 89, _19 = 19) { return (_ber + _89 + _19); };
+// eslint-disable-next-line
+export default function getSumOfHoods(initialNumber, expansion1989 = 89, expansion2019 = 19) { return (initialNumber + expansion1989 + expansion2019); };
