@@ -6,7 +6,7 @@ export default async function handleProfileSignup(firstName, lastName, fileName)
     .allSettled([signUpUser(firstName, lastName), uploadPhoto(fileName)])
     .then((res) => {
       const data = [];
-      for (let index = 0; index < res.length; index++) {
+      for (let index = 0; index < res.length; index += 1) {
         data.push({
           status: res[index].status,
           value: res[index].status === 'fulfilled' ? res[index].value : String(res[index].reason),
