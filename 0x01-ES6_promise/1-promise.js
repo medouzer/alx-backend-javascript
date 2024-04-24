@@ -1,5 +1,5 @@
 export default function getFullResponseFromAPI(success){
-    return Promise ((resolve, reject) => {
+    return new Promise ((resolve, reject) => {
         if (success)
         {
             setTimeout(() => {
