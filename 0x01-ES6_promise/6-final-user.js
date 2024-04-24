@@ -7,4 +7,7 @@ export default function handleProfileSignup(firstName, lastName, fileName) {
     .then((data) => {
       return "1";
     })
+    .catch((e) => {
+        console.log(e);
+    })
 }
