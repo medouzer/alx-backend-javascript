@@ -12,5 +12,5 @@ const asyncUploadUser = async () => {
       user: null,
     };
   }
-}
+};
 export default asyncUploadUser;
