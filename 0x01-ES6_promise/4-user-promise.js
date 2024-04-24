@@ -1,4 +1,4 @@
-export default async function signUpUser(firstName, lastName) {
+export default function signUpUser(firstName, lastName) {
     const promise = new Promise (() => {
         return {
             firstName,
