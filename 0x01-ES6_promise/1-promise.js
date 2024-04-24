@@ -3,8 +3,9 @@ export default function getFullResponseFromAPI(success){
         if (success)
         {
             setTimeout(() => {
-                resolve('Success');
-            }, 200);
+                const data = {status: 200, body: 'Success'}
+                resolve(data);
+            }, 1000);
         }
         else
         {
