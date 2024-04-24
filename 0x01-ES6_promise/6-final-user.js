@@ -12,8 +12,6 @@ export default async function handleProfileSignup(firstName, lastName, fileName)
           value: o.status === 'fulfilled' ? o.value : String(o.reason),
         })
       });
-
-      console.log(data);
       return (data);
     });
 }

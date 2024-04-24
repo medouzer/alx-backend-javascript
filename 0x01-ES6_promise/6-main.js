@@ -1,3 +1,7 @@
 import handleProfileSignup from './6-final-user';
 
-console.log(handleProfileSignup("Bob", "Dylan", "bob_dylan.jpg"));
+const promise = handleProfileSignup("Bob", "Dylan", "bob_dylan.jpg");
+
+promise.then((data) => {
+    console.log("data : ", data);
+});
