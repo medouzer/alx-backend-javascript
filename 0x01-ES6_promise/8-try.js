@@ -1,3 +1,6 @@
 export default function divideFunction(numerator, denominator) {
-  return (denominator != 0) ? (numerator / denominator) : throw Error("cannot divide by 0");
+  if (denominator !== 0) {
+    return (numerator / denominator);
+  }
+  throw Error("cannot divide by 0");
 }
