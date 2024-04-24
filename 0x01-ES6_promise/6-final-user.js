@@ -10,7 +10,7 @@ export default async function handleProfileSignup(firstName, lastName, fileName)
         data.push({
           status: o.status,
           value: o.status === 'fulfilled' ? o.value : String(o.reason),
-        })
+        });
       });
       return (data);
     });
