@@ -6,12 +6,13 @@ export default async function handleProfileSignup(firstName, lastName, fileName)
     .allSettled([signUpUser(firstName, lastName), uploadPhoto(fileName)])
     .then((res) => {
       const data = [];
-      res.map((o) => {
+
+      for (let index = 0; index < res.length; index++) {
         data.push({
-          status: o.status,
-          value: o.status === 'fulfilled' ? o.value : String(o.reason),
+          status: res[index].status,
+          value: res[index].status === 'fulfilled' ? res[index].value : String(res[index].reason),
         });
-      });
+      }
       return (data);
     });
 }
