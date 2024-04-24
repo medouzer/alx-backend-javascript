@@ -8,6 +8,6 @@ export default function handleProfileSignup(firstName, lastName, fileName) {
       return "1";
     })
     .catch((e) => {
-        console.log(e);
+        console.log(e.message);
     })
 }
