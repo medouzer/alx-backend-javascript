@@ -4,7 +4,6 @@ import createUser from './utils'
 export default function handleProfileSignup() {
   return promise
   .all([uploadPhoto, createUser])
-  .then((values) => console.log(values))
-  .catch((error) => new Error())
-//   .finally(() => console.log('Got a response from the API'))
+  .then((photo, user) => console.log(`body: ${photo} firstName: ${user.firstName} lastName: ${user.lastName}`))
+  .catch(() => console.log('Signup system offline'))
 }
