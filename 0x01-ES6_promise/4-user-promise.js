@@ -6,5 +6,5 @@ export default async function signUpUser(firstName, lastName) {
         }
     });
 
-    return (await promise.resolve())
+    return (await promise)
 }
