@@ -3,8 +3,8 @@ import { createUser, uploadPhoto } from './utils';
 const asyncUploadUser = async () => {
   try {
     return {
-      photo: await uploadPhoto,
-      user: await createUser,
+      photo:  uploadPhoto,
+      user:  createUser,
     }
   } catch (e) {
     return {
