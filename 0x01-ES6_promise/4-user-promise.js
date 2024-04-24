@@ -1,7 +1,10 @@
-export default function signUpUser(firstName, lastName) {
+export default async function signUpUser(firstName, lastName) {
     const promise = new Promise(function(resolve, reject) {
-        resolve("walo");
+        return {
+            firstName,
+            lastName
+        }
     });
 
-    return (promise.resolve())
+    return (await promise.resolve())
 }
