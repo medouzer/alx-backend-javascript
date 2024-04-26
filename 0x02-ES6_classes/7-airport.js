@@ -4,7 +4,7 @@ export default class Airport {
 		this._code = code;
 	}
 
-	get [toString]() {
+	get [Symbol.toString]() {
 		return this._code;
 	}
 }
