@@ -5,7 +5,7 @@ export default class Car {
 		this._color = color;
 	}
 
-  get [Symbol.toStringTag]() {
-    return this._code;
-  }
+  cloneCar() {
+		return Symbol.toString(this._brand, this._motor, this._color);
+	}
 }
