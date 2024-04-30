@@ -1,5 +1,5 @@
 export default function groceriesList() {
-  let map = new Map([
+  const map = new Map([
     ["Apples", 10],
     ["Tomatoes", 10],
     ["Pasta", 1]
