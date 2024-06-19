@@ -1,6 +1,4 @@
-// 5-http.js
-const http = require('http');
-const url = require('url');
+const express = require('express');
 const fs = require('fs');
 
 const countStudents = (dataPath) => new Promise((resolve, reject) => {
@@ -56,28 +54,19 @@ const countStudents = (dataPath) => new Promise((resolve, reject) => {
   }
 });
 
+const app = express();
 const databaseFile = process.argv[2];
 
-const app = http.createServer((req, res) => {
-  const parsedUrl = url.parse(req.url, true);
-  res.setHeader('Content-Type', 'text/plain');
+app.get('/', (req, res) => {
+  res.send('Hello Holberton School!');
+});
 
-  if (parsedUrl.pathname === '/') {
-    res.statusCode = 200;
-    res.end('Hello Holberton School!');
-  } else if (parsedUrl.pathname === '/students') {
-    countStudents(databaseFile)
-      .then((result) => {
-        res.statusCode = 200;
-        res.end(`This is the list of our students\n${result}`);
-      })
-      .catch(() => {
-        res.statusCode = 500;
-        res.end('Cannot load the database');
-      });
-  } else {
-    res.statusCode = 404;
-    res.end('Not Found');
+app.get('/students', async (req, res) => {
+  try {
+    const result = await countStudents(databaseFile);
+    res.send(`This is the list of our students\n${result}`);
+  } catch (error) {
+    res.status(500).send('Cannot load the database');
   }
 });
 
